@@ -1,6 +1,6 @@
-# Frontend Mentor - Product preview card component solution
+# Frontend Mentor - Testimonials-grid-section solution
 
-This is my solution to the <a href="https://www.frontendmentor.io/learning-paths/building-responsive-layouts--z1qCXVqkD/steps/669b079685c991733471a1bd/challenge/start"> Product preview card component on Frontend Mentor</a>.<br> Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is my solution to the <a href="https://www.frontendmentor.io/challenges/testimonials-grid-section-Nnw6J7Un7"> Testimonials grid section on Frontend Mentor</a>.<br> Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 
 ## Overview
@@ -9,15 +9,15 @@ This is my solution to the <a href="https://www.frontendmentor.io/learning-paths
 
 <table>
   <tr>
-    <td style="width: 75%;"><img src="https://github.com/Lara-art/Recipe-page/blob/main/screenshots/Desktop.PNG" alt="Vista de Escritorio" style="width: 100%;"/></td>
-    <td style="width: 25%;"><img src="https://github.com/Lara-art/Recipe-page/blob/main/screenshots/mobile.PNG"  alt="Vista Móvil" style="width: 100%;"/></td>
+    <td style="width: 75%;"><img src="https://github.com/Lara-art/Testimonials-grid-section/blob/main/screenshot/Desktop.png" alt="Vista de Escritorio" style="width: 100%;"/></td>
+    <td style="width: 25%;"><img src="https://github.com/Lara-art/Testimonials-grid-section/blob/main/screenshot/Mobile.png"  alt="Vista Móvil" style="width: 100%;"/></td>
   </tr>
 </table>
 
 ### 🔗 Links
 
-- Solution URL: [Github](https://github.com/Lara-art/Product-preview-card-component)
-- Live Site URL: [Deployed](https://lara-art.github.io/Recipe-page/)
+- Solution URL: [Github](https://github.com/Lara-art/Testimonials-grid-section)
+- Live Site URL: [Deployed](https://lara-art.github.io/Testimonials-grid-section)
 
 ## My process
 
@@ -29,41 +29,84 @@ This is my solution to the <a href="https://www.frontendmentor.io/learning-paths
 - Base typography settings
 - Image styling
 - Use of Flexbox
+- Use of Grid -> And Grid-area-template
 - Mobile-first design
 
 
 ### 📚 What I learned
 
-With this exercise, I learned something I had never done before: changing the color of the list item markers.
+With this exercise, I learned about the grid area and how do it in @media.
 
 
 ```css
-li {
-        list-style-type: inherit var(--color-Dark-Raspberry);
-    }
 
-    & ::marker {
-        color: var(--color-Dark-Raspberry);
-    }
+.grid {
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1.8rem;
+    grid-template-areas:
+        "a a b e"
+        "c d d e";
+}
+
+.item1 {
+    grid-area: a;
+}
+
+.item2 {
+    grid-area: b;
+}
+
+.item3 {
+    grid-area: c;
+}
+
+.item4 {
+    grid-area: d;
+}
+
+.item5 {
+    grid-area: e;
 }
 
 
+@media (max-width:1000px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1.8rem;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+    }
+}
+
 ```
-I also had to set the image to position: absolute in media, so that it wouldn't be affected by the div it was placed in.
+The strangest thing was the image position: absolute and his @media.
 
 ```css
-@media screen and (min-device-width: 325px) and (max-device-width: 600px) {
 
-    .card {
-        border-radius: 0px;
-        margin: 150px auto 0px auto;
+.comillas {
+    width: 115px;
+    z-index: 1;
+    position: absolute;
+    right: 100px;
+    top: 0px;
+}
 
-        & img {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+
+@media (max-width:1000px) {
+    .comillas {
+        width: 115px;
+        right: 30px;
     }
+}
+
 ```
 
 
