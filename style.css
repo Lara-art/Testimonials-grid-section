@@ -156,12 +156,12 @@ span {
     }
 }
 
-.comillas{
-width: 115px;
-z-index: 1;
-position: absolute;
-right: 100px;
-top: 0px;
+.comillas {
+    width: 115px;
+    z-index: 1;
+    position: absolute;
+    right: 100px;
+    top: 0px;
 }
 
 .attribution {
@@ -175,6 +175,7 @@ top: 0px;
 }
 
 @media (max-width:1000px) {
+
     p,
     span {
         line-height: 16px;
@@ -192,8 +193,8 @@ top: 0px;
             "e";
     }
 
-    .comillas{
+    .comillas {
         width: 115px;
         right: 30px;
-        }
+    }
 }
